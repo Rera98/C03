@@ -1,27 +1,24 @@
  #include <stdio.h>
 
 int main() {
+    int n;
+    int a = 0, b = 1, suivant;
+
+    // Lecture de la valeur limite
  
- // Déclaration des variable
-            int n, a = 0, b = 1, suivant, i;
+    scanf("%d", &n);
 
-            // On demande à l'utilisateure d'entrer le nombre de termes
-           
-            scanf("%d", &n);
+    // Affichage de la série de Fibonacci
+    printf("Fibonacci : ");
 
-            // Affichage des termes de la série de Fibonacci
-            printf("Fibonacci : ");
-                
-            for (i = 0; i < n; i++)
-            {
-                if (i <= 1)
-                suivant = i;
-                else
-                {
-                suivant = a + b;
-                a = b;
-                b = suivant;
-                }
-                printf("%d ", suivant);
-                }
-        }
+    // Affiche les termes tant qu'ils ne dépassent pas la limite
+    while (a <= n) {
+        printf("%d ", a);
+        suivant = a + b;
+        a = b;
+        b = suivant;
+    }
+
+    printf("\n");
+    return 0;
+}
